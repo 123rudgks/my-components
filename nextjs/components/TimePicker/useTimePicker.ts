@@ -1,5 +1,8 @@
 import { TimePickerProps } from '@/components/TimePicker/TimePicker';
-import { TimeSection } from '@/components/TimePicker/TimePicker.types';
+import {
+  DEFAULT_TIME_FORMAT,
+  TimeSection,
+} from '@/components/TimePicker/TimePicker.types';
 import {
   buildSectionsFromFormat,
   getSelectedSection,
@@ -8,7 +11,10 @@ import {
 } from '@/components/TimePicker/TimePicker.utils';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const useTimePicker = ({ _format, _option }: TimePickerProps) => {
+const useTimePicker = ({
+  _format = DEFAULT_TIME_FORMAT,
+  _option,
+}: TimePickerProps) => {
   const [sections, setSections] = useState<TimeSection[]>([]);
   const [activeSection, setActiveSection] = useState<TimeSection>();
   const [value, setValue] = useState(_format);

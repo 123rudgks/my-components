@@ -13,3 +13,5 @@ export type TimeSection = {
   selectionStart: number;
   selectionEnd: number;
 };
+
+export const DEFAULT_TIME_FORMAT = 'hh:mm:ss';
